@@ -1,0 +1,67 @@
+﻿@using Brownie.Models
+<html>
+@Html.Partial("_AdminHeader")
+<head>
+    <script>
+        function backPage() {
+            window.history.forward();
+        }
+
+    </script>
+    <meta charset="utf-8">
+    <link href="~/Content/css/stylelogin.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="backPage()">
+    @{
+
+        if (Session["id"] == "admin")
+        {
+
+            <div class="order">
+
+                @{
+
+            List<Delivered> li = Model;
+            <form id="formOredr">
+                <h2 style="font-size:30px; color:wheat;margin-left: 30%;">Delivered Orders</h2>
+                <br>
+                <table>
+                    <tr>
+                        <th style="font-size:15px;">Name</th>
+                        <th style="font-size:15px;">Contact Number</th>
+                        <th style="font-size:15px;">Category</th>
+                        <th style="font-size:15px;">Time</th>
+                        <th style="font-size:15px;">Remove</th>
+                    </tr>
+                    @foreach (var i in li)
+                    {
+
+                        <tr>
+                            <td class="td1">@i.Name</td>
+                            <td class="td1">@i.Contact_num</td>
+                            <td class="td1">@i.category</td>
+                            <td class="td1">@i.Time</td>
+                            <td class="td1"><a href="~/Admin/RemDelOrder/@i.Id">Remove</a></td>
+                        </tr>
+
+
+
+                    }
+                </table>
+            </form>
+                }
+
+            </div>
+        }
+        else
+        {
+            Response.Redirect("Index");
+        }
+    }
+
+
+
+</body>
+</html>

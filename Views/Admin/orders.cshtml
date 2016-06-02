@@ -1,0 +1,72 @@
+﻿@using Brownie.Models
+<html>
+
+<head>
+    <script>
+        function backPage() {
+            window.history.forward();
+        }
+
+    </script>
+
+
+    <meta charset="utf-8">
+    <link href="~/Content/css/stylelogin.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+<body onload="backPage()">
+    @{
+
+
+        @Html.Partial("_AdminHeader")
+        <div class="order">
+
+            @{
+
+                List<Order> li = Model;
+                <form id="formOredr">
+                    <h1 style="font-size:30px; color:wheat;margin-left: 40%;"><u>Orders</u></h1>
+
+                    <br>
+                    <table>
+                        <tr>
+                            <th style="font-size:15px;">Name</th>
+                            <th style="font-size:15px;">Contact Number</th>
+                            <th style="font-size:15px;">Category</th>
+                            <th style="font-size:15px;">Package</th>
+                            <th style="font-size:15px;">Time</th>
+                            <th style="font-size:15px;">Deliver</th>
+                            <th style="font-size:15px;">Remove</th>
+
+                        </tr>
+                        @foreach (var i in li)
+                        {
+
+                            <tr>
+                                <td class="td1">@i.Name</td>
+                                <td class="td1">@i.Contact_num</td>
+                                <td class="td1">@i.category</td>
+                                <td class="td1">@i.package</td>
+
+                                <td class="td1">@i.Time</td>
+                                <td class="td1">&nbsp;&nbsp;&nbsp;&nbsp;<a href="~/Admin/DelOrder/@i.Id">Delivered</a>&nbsp;&nbsp;</td>
+                                <td class="td1">&nbsp;&nbsp;&nbsp;&nbsp;<a href="~/Admin/RemOrder/@i.Id">Remove</a></td>
+                            </tr>
+
+
+
+                        }
+                    </table>
+                </form>
+            }
+
+        </div>
+
+    }
+
+
+
+</body>
+
+</html>

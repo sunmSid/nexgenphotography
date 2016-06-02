@@ -1,0 +1,37 @@
+﻿<html>
+@Html.Partial("_header")
+<body>
+    <section class="container clearfix">
+        <!-- Page Title -->
+        <header class="container page_info clearfix">
+
+            <h1 class="regular brown bottom_line">Portrait shoot</h1>
+
+            <div class="clear"></div>
+        </header>
+
+
+        <div class="clear padding20"></div>
+
+
+        <div class="portfolio_1_4">
+            <ul id="list">
+
+                @foreach (var i in Model) {
+                    <li id="id-12" class="app">
+                        <span class="image">
+                            <a href="@Url.Content(i.path)" data-rel="prettyPhoto" class="img-thumb"><img class="portfolio_image" src="@Url.Content(i.path)" alt="" /></a>
+                        </span>
+
+                    </li>
+
+
+                }
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    @Html.Partial("_footer3")
+</body>
+</html>

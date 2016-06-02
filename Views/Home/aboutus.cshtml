@@ -1,0 +1,85 @@
+﻿@using Brownie.Models
+<html>
+@Html.Partial("_header")
+<body >
+    <div class="clear padding20"></div>
+    
+    <section class="homepage_widgets_bg clearfix" style="background-color: #636359; ">
+
+        <div class="container clearfix">
+
+            <div class="padding20"></div>
+
+
+            <!-- START COL 1/2 -->
+            <div class="col_1_2 " id="about">
+                <h1 class="regular white bottom_line">About Us</h1>
+                <p>
+                    Nex Gen Photography by Junaid was found in 2011.
+                    A production house solely working on portrait photography.
+                    We have earned a name in fashion and brand photography and are highly skilled in wedding photography.
+                    We have specialised the art of portrait photography.
+                </p>
+                <p>
+                    We have a team of six members lead by the genius photographer Junaid Javed Khan himself.
+                    Junaid started his production house back in 2010 but made it official in 2011.
+                    Junaid has achieved high skills in both photography and post processing.
+                    Junaid has earned 6 certificates and has won 5 photography competition.
+                    He has covered around 60+ weddings and 100+ brand shoots.
+                    We assure to provide you the best portraits in the town with minimum rates and packages.
+                </p>
+            </div>
+            <!-- END COL 1/2 -->
+            <!-- START COL 1/2 -->
+
+
+            <div class="col_1_2 last" id="why-section">
+                <h1 class="regular white bottom_line">Comments</h1>
+                <p>
+                    Write your thoughts about us here.
+                </p>
+
+                <div class="clear padding10"></div>
+
+
+
+                @{
+                    List<comment> li = Model;
+                    foreach (var i in li)
+                    {
+                        <div id="test" style="height: auto; font-size: 12px; color:white;">
+                            <img src="~/Content/images/dp2.png" style="float:left" />&nbsp;&nbsp;<b>@i.name</b><br>
+                            &nbsp;&nbsp;@i.comment1
+                        </div>
+                        <div class="clear padding10"></div>
+                    }
+
+                }
+
+                @*<div style="height: auto; font-size: 30px; color:white;" id="comment" >hello</div>*@
+                <div class="clear padding10"></div>
+                <form action="~/Home/Addcomment" method="post" class="contact_form">
+                    <p>
+
+                        <input class="cname" type="text" id="name" name="name" placeholder="Name" height="10" width="200" required />
+                    </p>
+
+                    <p>
+
+                        <textarea class="commentArea" id="cmnt" name="cmnt" placeholder="Comment here" rows="5" required></textarea>
+                    </p>
+                    <div class="clear"></div>
+                    <p class="submit">
+                        <input type="submit" class="button white" value="Enter" />
+                        <input type="reset" class="button white" value="Cancel" />
+                    </p>
+                </form>
+
+
+
+            </div>
+        </div>
+    </section>
+    <div class="clear padding20"></div>
+@Html.Partial("_footer3");
+

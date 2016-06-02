@@ -1,0 +1,102 @@
+﻿
+@using Brownie.Models
+<html>
+<head>
+    <script>
+        function backPage() {
+            window.history.forward();
+        }
+
+    </script>
+
+
+<style>
+    .newf {
+        border: 2px dashed white;
+        padding: 5%;
+        height: 30px;
+        width: 30px;
+        opacity: 0.8;
+        cursor: pointer;
+        transition: 0.25s;
+        margin-bottom: -0.9%;
+        background-image: url("~/Content/add.png");
+    }
+
+        .newf:hover {
+            opacity: 1;
+        }
+    #buttonRem {
+        float: left;
+        width: 40%;
+        height: 30px;
+        margin-left: 10%;
+        margin-top: 10px;
+        color: white;
+        background: #636359;
+        border-radius: 5px;
+    }
+</style>
+<script>
+    function myfun() {
+        document.getElementById("upfile").click();
+    }
+    function timf() {
+        document.getElementById("ftes").value = document.getElementById("upfile").value;
+    }
+
+</script>
+    </head>
+<body onload="backPage()">
+    @{
+
+        if (Session["id"] == "admin")
+        {
+            @Html.Partial("_AdminHeader")
+            <div class="portfolio_1_4">
+
+                @{using (Html.BeginForm("addportrait", "Admin", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+
+                    <img class="newf" src="~/Content/add.png" onclick="myfun()" />
+                    <input type="text" id="ftes" name="ftest" style="border: 2px solid white; width: 10%; height: 15px; color: white;margin-bottom: 1%; font-size: 12px" readonly>
+                    <input type='file' name='file' id="upfile" style="display: none" onchange="timf()" /><br><button type="submit" style="background-color: #94ccfc; margin-bottom: 5%; margin-left: 0.5%">OK</button>
+
+                }
+                }
+                <div style="color:red;font-size:20px; margin-left:25%;"><b>@ViewBag.Message</b></div>
+                <ul id="list">
+                    @{
+
+                List<portrait> li = Model;
+                foreach (var i in li)
+                {
+
+                    <li id="id-12" class="app">
+                        <span class="image">
+                            <img class="portfolio_image" src="@Url.Content(i.path)" alt="" />
+                        </span>
+                        <form action="~/Admin/deleteportrait/@i.Id"><div class="list-group"><button id="buttonRem" class="list-group-item">Remove</button></div></form>
+                        <form action="~/Admin/UpdatePort/@i.Id"><div class="list-group"><button id="buttonRem" class="list-group-item">Update</button></div></form>
+
+                    </li>
+
+
+                }
+                    }
+                </ul>
+
+            </div>
+
+        }
+        else
+        {
+            Response.Redirect("Index");
+        }
+    }
+
+
+
+</body>
+</html>

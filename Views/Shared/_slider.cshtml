@@ -1,0 +1,172 @@
+﻿<!--<div class="wrapper">
+    <ul id="sb-slider" class="sb-slider">
+        <li>
+            <a href="http://www.flickr.com/photos/strupler/2969141180" target="_blank"><img src="~/Content/data1/images/1.jpg" alt="image1" /></a>
+            <div class="sb-description">
+                <h3>Creative Lifesaver</h3>
+            </div>
+        </li>
+        <li>
+            <a href="http://www.flickr.com/photos/strupler/2968268187" target="_blank"><img src="~/Content/data1/images/2.jpg" alt="image2" /></a>
+            <div class="sb-description">
+                <h3>Honest Entertainer</h3>
+            </div>
+        </li>
+        <li>
+            <a href="http://www.flickr.com/photos/strupler/2968114825" target="_blank"><img src="~/Content/data1/images/3.jpg" alt="image1" /></a>
+            <div class="sb-description">
+                <h3>Brave Astronaut</h3>
+            </div>
+        </li>
+        <li>
+            <a href="http://www.flickr.com/photos/strupler/2968122059" target="_blank"><img src="~/Content/data1/images/4.jpg" alt="image1" /></a>
+            <div class="sb-description">
+                <h3>Affectionate Decision Maker</h3>
+            </div>
+        </li>
+        <li>
+            <a href="http://www.flickr.com/photos/strupler/2969119944" target="_blank"><img src="~/Content/data1/images/5.jpg" alt="image1" /></a>
+            <div class="sb-description">
+                <h3>Faithful Investor</h3>
+            </div>
+        </li>
+        <li>
+            <a href="http://www.flickr.com/photos/strupler/2968126177" target="_blank"><img src="~/Content/data1/images/6.jpg" alt="image1" /></a>
+            <div class="sb-description">
+                <h3>Groundbreaking Artist</h3>
+            </div>
+        </li>
+        <li>
+            <a href="http://www.flickr.com/photos/strupler/2968945158" target="_blank"><img src="~/Content/data1/images/7.jpg" alt="image1" /></a>
+            <div class="sb-description">
+                <h3>Selfless Philantropist</h3>
+            </div>
+        </li>
+    </ul>
+    <div id="shadow" class="shadow"></div>
+    <div id="nav-arrows" class="nav-arrows">
+        <a href="#">Next</a>
+        <a href="#">Previous</a>
+    </div>
+</div>
+    </div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="~/Content/data1/js/jquery.slicebox.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        var Page = (function () {
+
+            var $navArrows = $('#nav-arrows').hide(),
+                $shadow = $('#shadow').hide(),
+                slicebox = $('#sb-slider').slicebox({
+                    onReady: function () {
+
+                        $navArrows.show();
+                        $shadow.show();
+
+                    },
+                    orientation: 'r',
+                    cuboidsRandom: true,
+                    disperseFactor: 30
+                }),
+
+                init = function () {
+
+                    initEvents();
+
+                },
+                initEvents = function () {
+
+                    // add navigation events
+                    $navArrows.children(':first').on('click', function () {
+
+                        slicebox.next();
+                        return false;
+
+                    });
+
+                    $navArrows.children(':last').on('click', function () {
+
+                        slicebox.previous();
+                        return false;
+
+                    });
+
+                };
+
+            return { init: init };
+
+        })();
+
+        Page.init();
+
+    });
+</script>-->
+
+
+
+<!-- Slider --><!--
+<div class="bannerbg">
+    <div class="container clearfix">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="/Content/images/fslide01.jpg" alt="" />
+                    <p class="flex-caption">Portrait</p>
+                </li>
+                <li>
+                    <img src="/Content/images/fslide02.jpg" alt="" />
+                        <p class="flex-caption">Kids shoot</p>
+                </li>
+                <li>
+                    <img src="/Content/images/fslide03.jpg" alt="" />
+                    <p class="flex-caption">Wedding</p>
+                </li>
+                <li>
+                    <img src="~/Content/images/fslide04.jpg" alt="" />
+                </li>
+
+                <li>
+                    <img src="~/Content/images/fslide05.jpg" alt="" />
+                    <p class="flex-caption">Traveling</p>
+                </li>
+
+                <li>
+                    <img src="~/Content/images/fslide06.jpg" alt="" />
+                    <p class="flex-caption">Bridal</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>-->
+<!-- /Slider -->
+<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+<div id="wowslider-container1">
+    <div class="ws_images">
+        <ul>
+            <li><img src="~/Content/data1/data1/images/01.jpg" alt="01" title="Kids" id="wows1_0" /></li>
+            <li><img src="~/Content/data1/data1/images/01org.jpg" alt="01-org" title="01-org" id="wows1_1" /></li>
+            <li><img src="~/Content/data1/data1/images/02.jpg" alt="02" title="Travel" id="wows1_2" /></li>
+            <li><img src="~/Content/data1/data1/images/04.jpg" alt="04" title="Bridal" id="wows1_3" /></li>
+            <li><img src="~/Content/data1/data1/images/05.jpg" alt="05" title="Portrait" id="wows1_4" /></li>
+            <li><a href="http://wowslider.com"><img src="~/Content/data1/data1/images/06.jpg" alt="wowslideshow" title="Wedding" id="wows1_5" /></a></li>
+            <li><img src="~/Content/data1/data1/images/020.jpg" alt="020" title="Portrait" id="wows1_6" /></li>
+        </ul>
+    </div>
+    <div class="ws_bullets">
+        <div>
+            <a href="#" title="Kids"><span><img src="~/Content/data1/data1/tooltips/01.jpg" alt="01" />1</span></a>
+            <a href="#" title="01-org"><span><img src="~/Content/data1/data1/tooltips/01org.jpg" alt="01-org" />2</span></a>
+            <a href="#" title="Travel"><span><img src="~/Content/data1/data1/tooltips/02.jpg" alt="02" />3</span></a>
+            <a href="#" title="Bridal"><span><img src="~/Content/data1/data1/tooltips/04.jpg" alt="04" />4</span></a>
+            <a href="#" title="Portrait"><span><img src="~/Content/data1/data1/tooltips/05.jpg" alt="05" />5</span></a>
+            <a href="#" title="Wedding"><span><img src="~/Content/data1/data1/tooltips/06.jpg" alt="06" />6</span></a>
+            <a href="#" title="Portrait"><span><img src="~/Content/data1/data1/tooltips/020.jpg" alt="020" />7</span></a>
+        </div>
+    </div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery carousel</a> by WOWSlider.com v8.7</div>
+    <div class="ws_shadow"></div>
+</div>
+<script type="text/javascript" src="~/Content/data1/engine1/wowslider.js"></script>
+<script type="text/javascript" src="~/Content/data1/engine1/script.js"></script>
+<!-- End WOWSlider.com BODY section -->

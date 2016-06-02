@@ -1,0 +1,32 @@
+﻿
+<html>
+<head>
+    <script>
+        function backPage()
+        {
+            window.history.forward();
+        }
+
+    </script>
+</head>
+
+<body onload="backPage()">
+    @{
+        if (Session["id"] == "admin")
+        { 
+            @Html.Partial("_AdminHeader")
+    <div class="order">
+        <form>
+            <h2 style="font-size: 30px; color: wheat; padding-top: 50px; padding-left: 50px;">Welcome!</h2><br><br>
+    
+            </form>
+        </div>
+    }
+    else
+        {
+            
+            Response.Redirect("index");
+        }
+    }
+</body>
+</html>

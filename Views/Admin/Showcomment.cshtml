@@ -1,0 +1,61 @@
+﻿@using Brownie.Models
+<html>
+<head>
+    <script>
+        function backPage() {
+            window.history.forward();
+        }
+
+    </script>
+</head>
+
+
+
+<body onload="backPage()">
+    @{
+        if (Session["id"] == "admin")
+        {
+            @Html.Partial("_AdminHeader")
+
+            <div class="order">
+                <form id="formOredr">
+
+                    <h2 style="font-size:30px; color:wheat;margin-left: 30%;">Comments</h2><br>
+                    <br>
+                    <table>
+                        <tr>
+                            <th style="font-size:15px;">Name</th>
+                            <th style="font-size:15px;">Comment</th>
+                            <th style="font-size:15px;">Remove</th>
+
+
+                        </tr>
+                        @{
+            List<comment> li = Model;
+            foreach (var i in li)
+            {
+
+                <tr>
+                    <td class="td1">@i.name</td>
+                    <td class="td1">@i.comment1</td>
+
+                    <td class="td1">&nbsp;&nbsp;&nbsp;&nbsp;<a href="~/Admin/RemCmnt/@i.Id">Remove</a></td>
+                </tr>
+
+
+
+            }
+                        }
+                    </table>
+                </form>
+            </div>
+        }
+        else
+        {
+
+            Response.Redirect("index");
+        }
+    }
+</body>
+
+</html>

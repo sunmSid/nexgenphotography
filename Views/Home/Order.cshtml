@@ -1,0 +1,137 @@
+﻿@using Brownie.Models
+<html>
+@Html.Partial("_header")
+<head>
+    
+</head>
+
+<body>
+    <script>
+
+
+    </script>
+    <!-- START CONTENT -->
+    <section class="container clearfix">
+        <!-- START PAGE INFO -->
+        <header class="container page_info clearfix">
+
+            <h1 class="regular brown bottom_line">Order Now</h1>
+
+            <div class="clear"></div>
+        </header>
+
+        <!-- END PAGE INFO -->
+
+        <div class="padding15"></div>
+        @{
+            //var i = Model;
+            foreach (var i in Model)
+            {
+                <div class="col_1_3" style="margin-left:0px;">
+                    <img src="@Url.Content(i.path)" style="height:500px; width:300px;" />
+                    <div class="clear"></div>
+
+                </div>
+            }
+
+
+        }
+        <!-- START COL 1/3 -->
+        @*<div class="col_1_3"style="margin-left:0px;">
+            <img src="~/Content/images/package.jpg" style="height:500px; width:300px;"/>*@
+        @*<ul class="contact-address">
+                <li>
+                    <span>
+                        Enter yor name
+                        <br>Your contact number
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        Some addition information
+                        <br>and finally submit
+                    </span>
+                </li>
+            </ul>*@
+
+
+        <!-- END COL 1/3 -->
+        <!-- START COL 2/3 LAST -->
+        <div class="col_2_3 last" >
+
+            <p style="padding-left: 15%;">
+                Replce your order here and we will contact you soon for confirmation.<br> ( couple, kids, Birthdays, and events).
+
+            </p>
+            <div style="color: green; font-size:15px;margin-left: 40%;">@ViewBag.Message</div>
+            <div class="padding20"></div>
+
+            <p class="required_info" style="padding-left: 15%;"><span>*</span> Required</p>
+
+
+
+
+
+            <!-- START CONTACT FORM -->
+            <form action="~/Home/AddOrder" method="post" class="contact_form" style="padding-left: 15%;">
+                <p>
+                    <label for="name">Name <span>*</span></label>
+                    <input class="inputText" type="text" id="name" name="name" placeholder="Name" required />
+                </p>
+                <div class="clear"></div>
+                <p>
+                    <label for="email">Phone No <span>*</span></label>
+                    <input class="inputText" type="text" id="phone" name="phone" placeholder="Phone No" pattern="[0-9]{11}" required />
+                </p>
+                <label for="name">Category<span>*</span></label>
+
+                <select name="cat" required>
+
+                    <option class="select" value="">--Select--</option>
+                    <option value="Bridal">Event</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="Brand shoot">Brand shoot</option>
+                    <option value="Portrait shoot">Portrait shoot</option>
+                    <option value="Kids shoot">Kids shoot</option>
+                    <option value="Product shoot">Product shoot</option>
+
+                </select>
+                <label for="name">Package<span>*</span></label>
+
+                <select name="pkg" required>
+
+                    <option class="select" value="">--Select--</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Bronz">Bronze</option>
+                    <option value="Gold">Gold</option>
+
+                </select>
+
+                <div class="clear"></div>
+                <br>
+                <p>
+                    <label for="message">Message</label>
+                    <textarea class="inputTextarea" cols="60" rows="5" id="message" name="msg" placeholder="Additional Information"></textarea>
+                </p>
+                <div class="clear"></div>
+                <p class="submit">
+                    <input type="submit" class="button white" value="Order" />
+                    <input type="reset" class="button white" value="Reset" />
+                </p>
+            </form>
+            <!-- END CONTACT FORM -->
+
+        </div>
+        <!-- END COL 2/3 LAST -->
+
+
+
+        <div class="clear padding20"></div>
+
+
+    </section>
+    <!-- END CONTENT -->
+    @Html.Partial("_footer3");
+
+</body>
+</html>
